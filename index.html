@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Barad Urshit V - Portfolio</title>
+
+    <style>
+        :root {
+            --bg-color: #e8faff;
+            --text-color: black;
+            --section-bg: white;
+            --highlight:#00f5ce;
+            --highlight2: red;
+            --card-bg: #ffffff;
+        }
+
+        /* DARK MODE VARIABLES */
+        .dark {
+            --bg-color: #0e0e0e;
+            --text-color: #e6e6e6;
+            --section-bg: #1a1a1a;
+            --card-bg: #141414;
+            --highlight: #00f5ce;
+            --highlight2: #ff4444;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            scroll-behavior: smooth;
+        }
+
+        /* HEADER */
+        header {
+            background-color: var(--highlight);
+            color: var(--highlight2);
+            text-align: center;
+            padding: 20px 0;
+            font-size: 28px;
+            font-weight: bold;
+            animation: slideDown 1.2s ease-in-out;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        /* DARK MODE BUTTON */
+        #toggleBtn {
+            position: fixed;
+            top: 15px;
+            right: 15px;
+            background: var(--highlight);
+            color: var(--highlight2);
+            border: none;
+            padding: 10px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        #toggleBtn:hover {
+            background: var(--highlight2);
+            color: white;
+        }
+
+        /* SECTIONS */
+        section {
+            padding: 25px;
+            margin: 20px;
+            background: var(--section-bg);
+            border-left: 5px solid var(--highlight);
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        section:hover {
+            transform: scale(1.02);
+            transition: 0.3s ease;
+            box-shadow: 0 0 15px var(--highlight);
+        }
+
+        @keyframes fadeIn {
+            from {opacity: 0; transform: translateY(20px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+
+        h2, h3 {
+            color: var(--highlight2);
+            animation: glow 2s infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 5px var(--highlight2); }
+            to { text-shadow: 0 0 15px var(--highlight); }
+        }
+
+        /* PROFILE IMAGE */
+        .profile {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .profile img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            border: 5px solid var(--highlight);
+            box-shadow: 0 0 20px var(--highlight2);
+            transition: 0.3s;
+        }
+
+        .profile img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 30px var(--highlight);
+        }
+
+        /* PROJECT CARDS */
+        .project-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            width: 280px;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid var(--highlight);
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+            transition: 0.4s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 20px var(--highlight);
+        }
+
+        .project-card h3 {
+            margin-top: 0;
+        }
+
+        /* LISTS */
+        ul {
+            list-style-type: square;
+            padding-left: 20px;
+        }
+
+        li:hover {
+            color: var(--highlight2);
+            transform: translateX(5px);
+            transition: 0.3s;
+        }
+
+        /* EDUCATION TABLE */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        table, th, td {
+            border: 2px solid var(--highlight);
+        }
+
+        th {
+            background-color: var(--highlight);
+            color: var(--highlight2);
+            padding: 10px;
+        }
+
+        td {
+            background-color: var(--section-bg);
+            padding: 10px;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: var(--highlight);
+            color: var(--highlight2);
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <button id="toggleBtn">Dark Mode</button>
+
+    <header>Portfolio – Barad Urshit V</header>
+
+    <!-- PROFILE PHOTO -->
+    <section class="profile">
+        <img src="yourphoto.jpg" alt="Profile Photo" />
+        <h2>Barad Urshit V</h2>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+        <h2>Myself</h2>
+        <p>
+            Hi, I’m <b>Barad Urshit V</b>, an enthusiastic learner and aspiring software developer. 
+            I am currently pursuing my graduation at <b>Noble University</b>.
+        </p>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="studies">
+        <h2>Studies</h2>
+
+        <table>
+            <tr>
+                <th>Level</th>
+                <th>Institute</th>
+                <th>Details</th>
+            </tr>
+            <tr>
+                <td>High School</td>
+                <td>Samarpan School</td>
+                <td>Completed with strong interest in computers.</td>
+            </tr>
+            <tr>
+                <td>Graduation</td>
+                <td>Noble University</td>
+                <td>Currently pursuing software-related subjects.</td>
+            </tr>
+        </table>
+
+        <h3>Subjects Studied</h3>
+        <ul>
+            <li>Web Designing (HTML, CSS)</li>
+            <li>C Programming</li>
+            <li>C++ (OOP)</li>
+            <li>DBMS & SQL</li>
+            <li>IT Programming</li>
+        </ul>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+        <h2>Skills</h2>
+
+        <h3>Technical Skills</h3>
+        <ul>
+            <li>Web Designing</li>
+            <li>C / C++</li>
+            <li>DBMS</li>
+            <li>SQL Basics</li>
+        </ul>
+
+        <h3>Soft Skills</h3>
+        <ul>
+            <li>Problem Solving</li>
+            <li>Quick Learner</li>
+            <li>Teamwork</li>
+            <li>Adaptability</li>
+        </ul>
+    </section>
+
+    <!-- PROJECT CARDS -->
+    <section>
+        <h2>Projects</h2>
+        <div class="project-container">
+
+            <div class="project-card">
+                <h3>Portfolio Website</h3>
+                <p>A responsive personal website created using HTML, CSS, and animations.</p>
+            </div>
+
+            <div class="project-card">
+                <h3>Student Database (C++)</h3>
+                <p>A mini console-based project demonstrating OOP and file handling.</p>
+            </div>
+
+            <div class="project-card">
+                <h3>Basic Web Layout</h3>
+                <p>Designed static web pages using HTML & CSS for practice.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CAREER -->
+    <section id="career">
+        <h2>Career Goals</h2>
+        <p>
+            I aim to become a professional <b>software developer</b> and work on impactful real-world projects using modern technologies.
+        </p>
+    </section>
+
+    <footer>© 2025 Barad Urshit V – Portfolio</footer>
+
+    <script>
+        // DARK MODE TOGGLE
+        let darkMode = false;
+        const btn = document.getElementById("toggleBtn");
+
+        btn.onclick = () => {
+            document.body.classList.toggle("dark");
+            darkMode = !darkMode;
+            btn.textContent = darkMode ? "Light Mode" : "Dark Mode";
+        };
+    </script>
+
+</body>
+</html>
